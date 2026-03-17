@@ -14,7 +14,11 @@ const PORT = process.env.PORT || 3001;
 // ── Middlewares globales ──────────────────────────────────────
 app.use(express.json());
 app.use(cors({
-  origin: '*',
+  origin: [
+    'https://glowing-zabaione-bedad5.netlify.app',
+    'http://localhost:8080',
+    'http://127.0.0.1:5500'
+  ],
   methods: ['GET','POST','PUT','DELETE'],
   allowedHeaders: ['Content-Type','Authorization','x-admin-token']
 }));
